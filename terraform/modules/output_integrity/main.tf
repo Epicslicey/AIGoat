@@ -208,6 +208,7 @@ resource "aws_security_group" "sagemaker_sg" {
 }
 
 
+/*
 resource "aws_sagemaker_notebook_instance" "comments_filter" {
   name                         = "comments-filter-${random_string.suffix.result}"
   instance_type                = "ml.t2.medium"
@@ -217,6 +218,7 @@ resource "aws_sagemaker_notebook_instance" "comments_filter" {
   subnet_id                    = var.subd_public
   security_groups              = [aws_security_group.sagemaker_sg.id]
 }
+*/
 
 output "api_invoke_url" {
   value = "https://${aws_api_gateway_rest_api.comments_filter_api.id}.execute-api.${var.region}.amazonaws.com/prod/comment"
